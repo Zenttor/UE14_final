@@ -4,7 +4,7 @@ import sqlite3
 def connect_db(db_filename) -> sqlite3.Connection:
     sqlite_connection = None
     try:
-        sqlite_connection = sqlite3.connect(db_filename, check_same_thread = False)
+        sqlite_connection = sqlite3.connect(db_filename, check_same_thread=False)
     except sqlite3.Error as error:
         print("Failed to connect database", db_filename, error)
     finally:
@@ -45,4 +45,3 @@ def del_data(db_conn, query, param):
 
 def disconnect_db(db_conn):
     db_conn.close()
-
